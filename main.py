@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+def apply_discount(price, discount):
+    final_price = int(pri * (1 - discount))
+    if not 0 <= final_price < price:
+        raise ValueError('Invalid Discount')
+    
+    return final_price
