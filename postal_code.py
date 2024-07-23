@@ -23,9 +23,4 @@ zip_codes = [
     '123.4-56789',
 ]
 
-# print(list(filter(is_valid_code, zip_codes)))
-result = []
-for zip_code in zip_codes:
-    if is_valid_code(zip_code):
-        result.append(zip_code)
-print(result)        
+print(list(filter(is_valid_code, zip_codes)))
