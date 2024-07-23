@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import re as regex
+
 def is_valid_code(zip_code: str) -> bool:
     """Check if zip code is valid return true
     Args:
@@ -6,13 +8,7 @@ def is_valid_code(zip_code: str) -> bool:
     Returns:
         bool: _description_
     """
-    return (
-        isinstance(zip_code, str)
-        and len(zip_code) == 11
-        and zip_code[5] == '-'
-        and zip_code[:5].isdigit()
-        and zip_code[6:].isdigit()
-    )
+    return bool(regex.search('[\d]{5}-[\d]{5}', zip_code))
 
 zip_codes = [
     '12345-12345',
