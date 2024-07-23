@@ -8,7 +8,11 @@ def is_valid_code(zip_code: str) -> bool:
     Returns:
         bool: _description_
     """
-    return bool(regex.search('[\d]{5}-[\d]{5}', zip_code))
+    pattern = regex.compile(r'^([\d]{5})-[\d]{5}$')
+    matched = pattern.search(zip_code)
+    if matched:
+        print(matched.group(1))
+    return bool(matched)    
 
 zip_codes = [
     '12345-12345',
@@ -19,4 +23,4 @@ zip_codes = [
     '123.4-56789',
 ]
 
-print(list(filter(is_valid_code, zip_codes)))
+print(*filter(is_valid_code, zip_codes), sep='\n')
